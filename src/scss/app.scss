@@ -1,86 +1,86 @@
-@import "dimens";
-@import "colors";
+@import 'dimens';
+@import 'colors';
 
 * {
-    font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .light {
-    background-color: $white;
-    color: $dark;
-    transition: ease 0.5s;
+	background-color: $white;
+	color: $dark;
+	transition: ease 0.5s;
 
-    input {
-        border: 1px solid $black;
-        background-color: $white;
-        color: $black;
-        transition: ease 0.5s;
-    }
+	input {
+		border: 1px solid $black;
+		background-color: $white;
+		color: $black;
+		transition: ease 0.5s;
+	}
 }
 
 .dark {
-    background-color: $dark;
-    color: $white;
-    transition: ease 0.5s;
+	background-color: $dark;
+	color: $white;
+	transition: ease 0.5s;
 
-    input {
-        border: 1px solid $white;
-        background-color: $dark;
-        color: $white;
-        transition: ease 0.5s;
-    }
+	input {
+		border: 1px solid $white;
+		background-color: $dark;
+		color: $white;
+		transition: ease 0.5s;
+	}
 }
 
 body {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 button {
-    width: 100%;
-    padding: 1em;
-    font-weight: bold;
-    border-radius: 0.5em;
-    border: 0px;
-    font-size: $body1;
-    background: $secondary-color;
-    color: $primary-color;
+	width: 100%;
+	padding: 1em;
+	font-weight: bold;
+	border-radius: 0.5em;
+	border: 0px;
+	font-size: $body1;
+	background: $secondary-color;
+	color: $primary-color;
 
-    &:hover {
-        background: $secondary-color-hover;
-    }
+	&:hover {
+		background: $secondary-color-hover;
+	}
 }
 
 form {
-    width: 100%;
-    display: flex;
-    flex-flow: column;
+	width: 100%;
+	display: flex;
+	flex-flow: column;
 
-    input {
-        padding: 1em;
-        border-radius: 0.5em;
-        font-size: $body1;
-        margin: 1em 0;
-    }
+	input {
+		padding: 1em;
+		border-radius: 0.5em;
+		font-size: $body1;
+		margin: 1em 0;
+	}
 
-    label {
-        font-size: $body1;
-        font-weight: bold;
-        width: 100%;
-    }
+	label {
+		font-size: $body1;
+		font-weight: bold;
+		width: 100%;
+	}
 }
 
 a {
-    color: $secondary-color;
-    text-decoration: none;
-    margin-bottom: 1em;
+	color: $secondary-color;
+	text-decoration: none;
+	margin-bottom: 1em;
 
-    &:hover {
-        color: $secondary-color-hover;
-        text-decoration: underline;
-    }
+	&:hover {
+		color: $secondary-color-hover;
+		text-decoration: underline;
+	}
 }

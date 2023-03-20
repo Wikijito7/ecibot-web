@@ -12,7 +12,6 @@
 	const setPassword = (value) => {
 		password = value;
 	};
-	
 </script>
 
 <head>

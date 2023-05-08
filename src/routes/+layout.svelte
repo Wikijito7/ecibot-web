@@ -26,5 +26,8 @@
 		display: flex;
 		flex-flow: column;
 		min-height: 100vh;
+		max-width: 1920px;
+		margin: auto;
+		padding: 0 1em;
 	}
 </style>

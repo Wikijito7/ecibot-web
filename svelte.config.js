@@ -17,7 +17,7 @@ const config = {
 			precompress: false,
 			strict: true,
 			fallback: 'index.html'
-		  })
+		})
 	},
 	preprocess: [
 		vitePreprocess({

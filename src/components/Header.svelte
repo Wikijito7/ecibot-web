@@ -7,7 +7,7 @@
 
 <div class="toolbar">
 	<div id="toolbarcontent">
-		<a id="icon" href="/"><i class="fas fa-robot" /> Ecibot</a>
+		<a id="icon" href="/"><i class="fas fa-robot" /> ECIBot</a>
 
 		<nav>
 			<a href="/">Inicio</a>

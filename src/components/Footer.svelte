@@ -6,9 +6,9 @@
 <footer>
 	<div id="footercontent">
 		<div id="copyright">
-			<p id="footertitle"><i class="fas fa-robot" /> Ecibot</p>
+			<p id="footertitle"><i class="fas fa-robot" /> ECIBot</p>
 			<p>
-				Ecibot <i class="fas fa-code" /> con <i class="fas fa-heart" /> por
+				ECIBot <i class="fas fa-code" /> con <i class="fas fa-heart" /> por
 				<a href="https://wokis.es">Wokis</a>.
 			</p>
 			<p>Copyright © {year} Wokis</p>
@@ -17,9 +17,9 @@
 		<div>
 			<p><b>Enlaces de interés</b></p>
 			<ul>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Commands</a></li>
-				<li><a href="#">Repository</a></li>
+				<li><a href="#">Sobre</a></li>
+				<li><a href="#">Comandos</a></li>
+				<li><a href="https://github.com/Wikijito7/ECIBot">Repositorio</a></li>
 				<li><a href="#">Lorem</a></li>
 				<li><a href="#">Ipsum</a></li>
 			</ul>
@@ -29,7 +29,7 @@
 			<p><b>Webs de Wokis</b></p>
 			<ul>
 				<li><a href="https://wokis.es">Wokis</a></li>
-				<li><a href="https://ecibot.wokis.es"><b>Ecibot</b></a></li>
+				<li><a href="https://ecibot.wokis.es"><b>ECIBot</b></a></li>
 				<li><a href="https://finance.wokis.es">Project Finance</a></li>
 				<li><a href="https://projectalpha.es">Project Alpha</a></li>
 			</ul>
@@ -67,7 +67,7 @@
 			padding: 2em 0;
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: space-between;
+			justify-content: space-around;
 			margin: 0 1em;
 
 			div {

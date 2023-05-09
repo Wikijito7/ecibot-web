@@ -4,6 +4,7 @@
 
 	let username = '';
 	let password = '';
+	let error = '';
 
 	const setUsername = (value) => {
 		username = value;
@@ -12,11 +13,32 @@
 	const setPassword = (value) => {
 		password = value;
 	};
-</script>
 
-<head>
-	<title>Ecibot - Login</title>
-</head>
+	const onAccept = (e) => {
+		e.preventDefault();
+		error = '';
+		if (!username.trim()) {
+			error = 'El nombre de usuario no puede estar vacío.';
+			return;
+		}
+
+		if (!username.trim()) {
+			error = 'La constraseña no puede estar vacío.';
+			return;
+		}
+
+		requestLogin();
+	};
+
+	const requestLogin = () => {
+		fetch('https://api.wokis.es/ecibot/login', {
+			method: 'POST',
+			body: JSON.stringify({ username: username, password: password })
+		});
+	};
+
+	document.title = 'ECIBot - Login';
+</script>
 
 <main>
 	<div id="background">
@@ -125,7 +147,8 @@
 	</div>
 	<section>
 		<h1>Iniciar sesión</h1>
-		<form>
+		<form on:submit={(e) => onAccept(e)}>
+			<p id="formerror" class={error.trim() ? 'visible' : 'hidden'}>{error}</p>
 			<label for="username">Usuario o correo</label>
 			<input
 				type="text"
@@ -183,6 +206,22 @@
 		form {
 			border-radius: 0.5em;
 			padding: 1em;
+
+			#formerror {
+				color: colors.$red;
+				background: colors.$lightred;
+				border-radius: 0.25em;
+				margin: 1em 0;
+				padding: 1em;
+			}
+		}
+
+		.visible {
+			display: block;
+		}
+
+		.hidden {
+			display: none;
 		}
 	}
 </style>

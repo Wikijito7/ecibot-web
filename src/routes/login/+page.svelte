@@ -145,7 +145,7 @@
 			</defs>
 		</svg>
 	</div>
-	<section>
+	<section class="roundedbackground">
 		<h1>Iniciar sesión</h1>
 		<form on:submit={(e) => onAccept(e)}>
 			<p id="formerror" class={error.trim() ? 'visible' : 'hidden'}>{error}</p>

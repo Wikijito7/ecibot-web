@@ -12,8 +12,11 @@
 		<nav>
 			<a href="/">Inicio</a>
 			<a href="/login">Acceder</a>
-			<button id="sun" style="display: {lightMode ? 'none' : 'block'}" on:click={onClick}
-				><i class="far fa-sun" /></button
+			<button
+				id="sun"
+				aria-label="change website color mode"
+				style="display: {lightMode ? 'none' : 'block'}"
+				on:click={onClick}><i class="far fa-sun" /></button
 			>
 			<button
 				aria-label="change website color mode"

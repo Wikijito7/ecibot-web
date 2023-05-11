@@ -57,11 +57,11 @@
 			font-size: 1em;
 		}
 
-        @media only screen and (max-width: 760px) {
-            #erroricon {
-                font-size: 10em;
-			    margin: 0; 
-            }
-        }
+		@media only screen and (max-width: 760px) {
+			#erroricon {
+				font-size: 10em;
+				margin: 0;
+			}
+		}
 	}
 </style>

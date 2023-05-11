@@ -5,6 +5,11 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+.roundedbackground {
+	padding: 1em;
+	border-radius: 1em;
+}
+
 .light {
 	background-color: $white;
 	color: $dark;
@@ -15,6 +20,15 @@
 		background-color: $white;
 		color: $black;
 		transition: ease 0.5s;
+	}
+
+	img {
+		filter: invert(0);
+		transition: ease 0.5s;
+	}
+
+	.roundedbackground {
+		background: rgba(253, 253, 253, 0.42);
 	}
 }
 
@@ -28,6 +42,15 @@
 		background-color: $dark;
 		color: $white;
 		transition: ease 0.5s;
+	}
+
+	img {
+		filter: invert(1);
+		transition: ease 0.5s;
+	}
+
+	.roundedbackground {
+		background: rgba(27, 31, 36, 0.42);
 	}
 }
 

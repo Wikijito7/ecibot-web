@@ -1,5 +1,9 @@
-<script>
+<script lang="js">
+	import { goto } from '$app/navigation';
 	document.title = 'ECIBot - Home';
+	const navigateToLogin = () => {
+		goto('/login');
+	};
 </script>
 
 <main>
@@ -36,45 +40,108 @@
 			<h1><i class="fas fa-robot" /> ECIBot</h1>
 			<p>Un bot de Discord personalizado hecho en Python para el servidor de ECI</p>
 			<p id="botquote">~bip-bop</p>
-			<button>Acceder</button>
+			<button on:click={navigateToLogin}>Acceder</button>
 		</div>
 	</header>
+
 	<section>
-		<h2>¿Qué es ECIBot?</h2>
-		<p>
-			ECIBot es un bot de Discord para el servidor de ECI. El bot tiene varias funcionalidades
-			relacionadas con el chat de voz, como reproducción de sonidos, reproducción del texto
-			escrito a voz usando un módulo TTS de Google e integración con GPT-3. ECIBot también
-			tiene integración con DALL-E mini, dando la posibilidad de generar 9 imágenes con la
-			entrada que le envíes.
-		</p>
-		<p>Puedes encontrar más información sobre los comandos <a href="comandos">aquí</a>.</p>
-		<p>
-			Puedes encontrar más información sobre el bot en su <a
-				href="https://github.com/Wikijito7/ECIBot">repositorio de Github</a
-			>.
-		</p>
+		<div class="sectionbg" />
+		<div>
+			<div>
+				<h2>¿Qué es ECIBot?</h2>
+				<p>
+					ECIBot es un bot de Discord para el servidor de ECI. El bot tiene varias
+					funcionalidades relacionadas con el chat de voz, como reproducción de sonidos,
+					reproducción del texto escrito a voz usando un módulo TTS de Google e
+					integración con GPT-3. ECIBot también tiene integración con DALL-E mini, dando
+					la posibilidad de generar 9 imágenes con la entrada que le envíes.
+				</p>
+				<p>
+					Puedes encontrar más información sobre el bot en su <a
+						href="https://github.com/Wikijito7/ECIBot">repositorio de Github</a
+					>.
+				</p>
+			</div>
+			<img src="/img/robot-auto.svg" alt="automatic robot assembly" />
+		</div>
 	</section>
+
 	<section>
-		<h2>Top of Commands usage</h2>
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis assumenda
-			tempora maxime asperiores molestias at earum pariatur soluta deleniti, reprehenderit
-			incidunt ex omnis, veniam ea libero consequuntur repellat? Commodi!
-		</p>
+		<div class="sectionbg" />
+		<div>
+			<img src="/img/commands.svg" alt="command line terminal" />
+			<div>
+				<h2>Comandos</h2>
+				<p>
+					ECIBot tiene una gran lista de utilidades, es por eso que para interactuar con
+					el bot tienes a tu poder una lista de varios comandos.
+				</p>
+				<p>
+					Puedes encontrar más información sobre los comandos <a href="comandos">aquí</a>
+					o ejecutando <code>!help</code> en el bot.
+				</p>
+			</div>
+		</div>
 	</section>
+
 	<section>
-		<h2>Top of Sounds</h2>
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis assumenda
-			tempora maxime asperiores molestias at earum pariatur soluta deleniti, reprehenderit
-			incidunt ex omnis, veniam ea libero consequuntur repellat? Commodi!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis assumenda
-			tempora maxime asperiores molestias at earum pariatur soluta deleniti, reprehenderit
-			incidunt ex omnis, veniam ea libero consequuntur repellat? Commodi!
-		</p>
+		<div class="sectionbg" />
+		<div>
+			<div>
+				<h2>Sonidos</h2>
+				<p>
+					El bot tiene varias opciones para reproducir sonidos. Puedes elegir entre los
+					sonidos ya subidos al bot, reproducir sonidos de YouTube de hasta 6 minutos o
+					usar el módulo de TTS.
+				</p>
+				<p>
+					Puedes obtener más información sobre los sonidos <a href="sonidos">aquí</a>.
+				</p>
+			</div>
+			<img src="/img/sounds.svg" alt="sounds" />
+		</div>
+	</section>
+
+	<section>
+		<div class="sectionbg" />
+		<div>
+			<div>
+				<h2>Top of Sounds</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
+					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
+					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
+					Commodi!
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
+					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
+					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
+					Commodi!
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="sectionbg" />
+		<div>
+			<div>
+				<h2>Top of Sounds</h2>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
+					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
+					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
+					Commodi!
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
+					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
+					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
+					Commodi!
+				</p>
+			</div>
+		</div>
 	</section>
 </main>
 
@@ -91,6 +158,7 @@
 		display: flex;
 		flex-flow: column;
 		height: 30em;
+		padding: 0 1em;
 
 		#headercontent {
 			display: flex;
@@ -146,11 +214,76 @@
 		flex-flow: column;
 	}
 
+	#headercontent {
+		* {
+			max-width: 1920px;
+		}
+	}
+
 	section {
-		margin: 1em 0;
+		padding: 2em 1em;
+		display: flex;
+		flex-flow: column;
+		overflow-y: hidden;
+		position: relative;
+
+		h2 {
+			font-size: 2em;
+		}
+
+		div:not(.sectionbg) {
+			max-width: 1920px;
+		}
+
+		.sectionbg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+
+		& > div {
+			z-index: 2;
+			margin: auto;
+			min-height: 30em;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+
+			div {
+				margin: auto 0;
+				width: 40%;
+			}
+
+			img {
+				max-width: 25em;
+			}
+		}
+
+		& > div:nth-child(2n) {
+			flex-flow: row wrap-reverse;
+		}
 
 		p {
-			font-size: 1.1em;
+			font-size: 1.2em;
+		}
+	}
+
+	section:nth-child(2n + 1) {
+		.sectionbg {
+			background-color: #00000010;
+		}
+	}
+
+	@media only screen and (max-width: 760px) {
+		section {
+			& > div {
+				div {
+					width: 100%;
+				}
+			}
 		}
 	}
 </style>

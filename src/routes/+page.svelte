@@ -101,53 +101,11 @@
 			<img src="/img/sounds.svg" alt="sounds" />
 		</div>
 	</section>
-
-	<section>
-		<div class="sectionbg" />
-		<div>
-			<div>
-				<h2>Top of Sounds</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
-					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
-					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
-					Commodi!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
-					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
-					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
-					Commodi!
-				</p>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<div class="sectionbg" />
-		<div>
-			<div>
-				<h2>Top of Sounds</h2>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
-					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
-					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
-					Commodi!
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt blanditiis
-					assumenda tempora maxime asperiores molestias at earum pariatur soluta deleniti,
-					reprehenderit incidunt ex omnis, veniam ea libero consequuntur repellat?
-					Commodi!
-				</p>
-			</div>
-		</div>
-	</section>
 </main>
 
 <style lang="scss">
-	@use '../scss/dimens';
-	@use '../scss/colors';
+	@use '/src/scss/dimens';
+	@use '/src/scss/colors';
 
 	p {
 		font-size: dimens.$body1;
@@ -158,7 +116,7 @@
 		display: flex;
 		flex-flow: column;
 		height: 30em;
-		padding: 0 1em;
+		padding: 0 dimens.$document-padding;
 
 		#headercontent {
 			display: flex;
@@ -168,8 +126,12 @@
 			text-align: center;
 			color: colors.$white;
 
+			h1 {
+				font-size: 2.5em;
+			}
+
 			p {
-				font-size: 1.2em;
+				font-size: 1.3em;
 			}
 
 			#headertitle {
@@ -216,12 +178,12 @@
 
 	#headercontent {
 		* {
-			max-width: 1920px;
+			max-width: dimens.$max-width;
 		}
 	}
 
 	section {
-		padding: 2em 1em;
+		padding: 2em dimens.$document-padding;
 		display: flex;
 		flex-flow: column;
 		overflow-y: hidden;
@@ -232,7 +194,7 @@
 		}
 
 		div:not(.sectionbg) {
-			max-width: 1920px;
+			max-width: dimens.$max-width;
 		}
 
 		.sectionbg {
@@ -247,14 +209,15 @@
 		& > div {
 			z-index: 2;
 			margin: auto;
+			width: 100%;
 			min-height: 30em;
 			display: flex;
-			flex-flow: row wrap;
-			justify-content: space-around;
+			flex-flow: row wrap-reverse;
+			justify-content: space-between;
 
 			div {
 				margin: auto 0;
-				width: 40%;
+				width: 50%;
 			}
 
 			img {
@@ -262,7 +225,11 @@
 			}
 		}
 
-		& > div:nth-child(2n) {
+		&:nth-child(even) > div {
+			flex-flow: row wrap;
+		}
+
+		&:nth-child(odd) > div {
 			flex-flow: row wrap-reverse;
 		}
 
@@ -271,17 +238,23 @@
 		}
 	}
 
-	section:nth-child(2n + 1) {
+	section:nth-child(odd) {
 		.sectionbg {
 			background-color: #00000010;
 		}
 	}
 
-	@media only screen and (max-width: 760px) {
+	@media only screen and (max-width: 850px) {
 		section {
 			& > div {
 				div {
 					width: 100%;
+				}
+
+				img {
+					width: 25em;
+					max-width: 100%;
+					margin: auto;
 				}
 			}
 		}

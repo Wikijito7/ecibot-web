@@ -1,6 +1,7 @@
 <script>
 	/** @type {import('./$types').PageData} */
 	export let data;
+	import { goto } from '$app/navigation';
 
 	let username = '';
 	let password = '';
@@ -35,6 +36,8 @@
 			method: 'POST',
 			body: JSON.stringify({ username: username, password: password })
 		});
+
+		goto('/app');
 	};
 
 	document.title = 'ECIBot - Login';
@@ -173,8 +176,8 @@
 </main>
 
 <style lang="scss">
-	@use '../../scss/dimens';
-	@use '../../scss/colors';
+	@use '/src/scss/dimens';
+	@use '/src/scss/colors';
 
 	main {
 		display: flex;

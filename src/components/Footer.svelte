@@ -38,8 +38,8 @@
 </footer>
 
 <style lang="scss">
-	@use '../scss/dimens';
-	@use '../scss/colors';
+	@use '/src/scss/dimens';
+	@use '/src/scss/colors';
 
 	footer {
 		background-color: colors.$black;
@@ -50,28 +50,28 @@
 		align-items: center;
 		color: colors.$white;
 
-		#footertitle {
-			font-weight: 800;
-			font-size: 1.2em;
-			margin-bottom: 0.5em;
-
-			.fa-robot {
-				margin-right: 0.25rem;
-			}
-		}
-
 		#footercontent {
+			max-width: dimens.$max-width;
 			width: 100%;
-			max-width: 1920px;
-			margin: 0 auto;
+			max-width: dimens.$max-width;
 			padding: 2em 0;
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: space-around;
-			margin: 0 1em;
+			justify-content: space-between;
+			margin: 0;
 
 			div {
-				padding: 1em;
+				padding: dimens.$document-padding;
+			}
+
+			#footertitle {
+				font-weight: 800;
+				font-size: 1.2em;
+				margin-bottom: 0.5em;
+
+				.fa-robot {
+					margin-right: 0.25rem;
+				}
 			}
 
 			#title {
@@ -107,7 +107,7 @@
 			color: colors.$heart;
 		}
 
-		@media only screen and (max-width: 760px) {
+		@media only screen and (max-width: 850px) {
 			#footercontent {
 				display: flex;
 				flex-flow: column;

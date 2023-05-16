@@ -20,6 +20,7 @@
 
 <style lang="scss">
 	@use '../scss/colors';
+	@use '../scss/dimens';
 
 	p {
 		font-size: 1.2em;
@@ -32,6 +33,7 @@
 		margin: auto;
 		align-items: center;
 		justify-content: space-around;
+		padding: dimens.$document-padding;
 
 		div {
 			max-width: 28em;

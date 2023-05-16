@@ -29,8 +29,8 @@
 </div>
 
 <style lang="scss">
-	@use '../scss/dimens';
-	@use '../scss/colors';
+	@use '/src/scss/dimens';
+	@use '/src/scss/colors';
 
 	.toolbar {
 		display: flex;
@@ -40,14 +40,14 @@
 		background: colors.$black;
 
 		#toolbarcontent {
-			max-width: 1920px;
+			max-width: dimens.$max-width;
 			width: 100%;
 			margin: auto;
 			display: flex;
 			flex-flow: row;
 			justify-content: space-between;
 			align-items: center;
-			padding: 0 1em;
+			padding: 0 dimens.$document-padding;
 
 			#icon {
 				font-size: dimens.$body1;
@@ -69,6 +69,7 @@
 		nav {
 			display: flex;
 			flex-flow: row;
+			align-items: center;
 
 			a {
 				color: colors.$white;
@@ -85,7 +86,7 @@
 				background: none;
 				border: none;
 				color: colors.$white;
-				padding: 1em;
+				padding: dimens.$document-padding;
 				margin: 0;
 
 				&:hover {

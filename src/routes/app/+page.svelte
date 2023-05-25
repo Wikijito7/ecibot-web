@@ -6,12 +6,19 @@
 	const soundsTop = ['cat', 'cat', 'cat', 'cat', 'cat'];
 	const commandsTop = ['cat', 'cat', 'cat', 'cat', 'cat'];
 	const usersTop = ['cat', 'cat', 'cat', 'cat', 'cat'];
+
+	const onAddSoundClicked = () => {
+
+	}
 </script>
 
 <main>
 	<section>
 		<article>
-			<h2>Audios pendientes ({newSounds.length})</h2>
+			<div id="sounds-header">
+				<h2>Audios pendientes ({newSounds.length})</h2>
+				<button on:click={() => onAddSoundClicked()}>Nuevo audio</button>
+			</div>
 			{#if newSounds.length > 0}
 				{#each newSounds as cat, i}
 					<div class="sound">
@@ -130,6 +137,26 @@
 				display: flex;
 				flex-flow: column;
 
+				#sounds-header {
+						display: flex;
+						flex-flow: row wrap;
+						justify-content: space-between;
+						justify-items: center;
+						margin: 1.25em 0;
+
+						h2, button {
+							margin: 0;
+							align-self: center;
+						}
+
+
+						button {
+							width: fit-content;
+							height: fit-content;
+							padding: .85em 1em;
+						}
+					}
+
 				.sound {
 					&:last-child {
 						border-bottom: 1px solid #00000000;
@@ -224,7 +251,7 @@
 
 				article:first-child {
 					width: unset;
-					padding-right: dimens.$document-padding;
+					padding: 0 dimens.$document-padding;
 				}
 
 				article:last-child {

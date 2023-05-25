@@ -78,6 +78,7 @@ button {
 	font-size: $body1;
 	background: $secondary-color;
 	color: $primary-color;
+	cursor: pointer;
 
 	&:hover {
 		background: $secondary-color-hover;

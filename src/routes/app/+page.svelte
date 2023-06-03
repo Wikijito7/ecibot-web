@@ -1,4 +1,6 @@
 <script>
+	import { goto } from '$app/navigation';
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 
@@ -8,7 +10,7 @@
 	const usersTop = ['cat', 'cat', 'cat', 'cat', 'cat'];
 
 	const onAddSoundClicked = () => {
-
+		goto('/app/audio-request');
 	}
 </script>
 

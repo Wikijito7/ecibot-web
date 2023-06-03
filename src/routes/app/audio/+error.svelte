@@ -6,9 +6,9 @@
 	<div id="errorbody">
 		<h1>Parece que te has perdido</h1>
 		<p id="desc">
-			El sonido que buscabas no existe o parece que te has perdido al navegar por la web. El tesoro está en otro lado, toma, usa este mapa.
+			El sonido que buscabas no existe o parece que te has perdido al navegar por la web. El tesoro está en otro lado. Toma, usa este mapa.
 		</p>
-		<p><a href="/app">¿Volver al inicio?</a></p>
+		<p><a href="/">¿Volver al inicio?</a></p>
 	</div>
 	<img id="erroriconcont" src="/img/map-treasure.svg" alt="mapa tesoro" />
 </div>

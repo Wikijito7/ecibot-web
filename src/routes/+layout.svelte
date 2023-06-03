@@ -3,7 +3,9 @@
 	import Header from '../components/Header.svelte';
 	import AppHeader from '../components/AppHeader.svelte';
 	import '../scss/app.scss';
-	import { page } from '$app/stores';
+
+	/** @type {import('./$types').PageData} */
+	export let data;
 
 	let lightMode = true;
 
@@ -12,15 +14,10 @@
 		console.log('Theme changed to ' + (lightMode ? 'light' : 'dark'));
 	};
 
-	const isUserOnApp = () => {
-		let route = $page.route.id 
-		return route != null &&
-			route.includes("app")
-	}
 </script>
 
 <div class="main {lightMode ? 'light' : 'dark'}">
-	{#if !isUserOnApp()}
+	{#if !data.appRouting}
 		<Header onClick={onThemeClick} {lightMode} />
 	{:else}
 		<AppHeader onClick={onThemeClick} {lightMode} />

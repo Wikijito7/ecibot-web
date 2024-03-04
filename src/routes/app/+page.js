@@ -1,7 +1,8 @@
 /** @type {import('./$types').PageLoad} */
-import { baseUri } from '../../constants/AppConstants';
 
-export async function load() {
-    let pendingAudios = await fetch(`${baseUri}/audios`)
-    return {};
-};
+export async function load({ data }) {
+	// let pendingAudios = await fetch(`${baseUri}/audios`)
+	return {
+		statsBlocks: data.statsBlocks
+	};
+}

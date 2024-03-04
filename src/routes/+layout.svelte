@@ -13,7 +13,6 @@
 		lightMode = !lightMode;
 		console.log('Theme changed to ' + (lightMode ? 'light' : 'dark'));
 	};
-
 </script>
 
 <div class="main {lightMode ? 'light' : 'dark'}">

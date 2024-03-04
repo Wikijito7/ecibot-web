@@ -11,7 +11,7 @@
 
 		<nav>
 			<a href="/app">Inicio</a>
-			<a id="profile" href="/app/profile"><img src="/img/favicon.ico" alt="user profile"/></a>
+			<a id="profile" href="/app/profile"><img src="/img/favicon.ico" alt="user profile" /></a>
 		</nav>
 	</div>
 </div>
@@ -68,7 +68,6 @@
 					background: colors.$black-hover;
 					text-decoration: none;
 				}
-
 			}
 
 			#profile {
@@ -83,13 +82,12 @@
 					max-width: 2em;
 					border-radius: 50%;
 					border: 1px solid #00000000;
-					
+
 					&:hover {
 						border: 1px solid colors.$primary-color;
 					}
 				}
 			}
-
 
 			button {
 				background: none;

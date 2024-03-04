@@ -1,3 +1,3 @@
-const baseUri = "https://api.wokis.es/ecibot";
+const baseUri = 'https://ecibot.wokis.es/api';
 
 export { baseUri };

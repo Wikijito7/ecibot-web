@@ -5,13 +5,29 @@
 	export let data;
 
 	const newSounds = ['cat', 'cat', 'cat', 'cat', 'cat', 'cat', 'cat', 'cat'];
-	const soundsTop = ['cat', 'cat', 'cat', 'cat', 'cat'];
-	const commandsTop = ['cat', 'cat', 'cat', 'cat', 'cat'];
-	const usersTop = ['cat', 'cat', 'cat', 'cat', 'cat'];
 
 	const onAddSoundClicked = () => {
 		goto('/app/audio-request');
-	}
+	};
+
+	const getStatName = (statType) => {
+		switch (statType) {
+			case 'SOUND_STAT':
+				return 'Sonidos';
+
+			case 'COMMAND_STAT':
+				return 'Comandos';
+
+			case 'USER_STAT':
+				return 'Usuarios';
+
+			case 'KIWI_STAT':
+				return 'Kiwi';
+
+			default:
+				return 'Desconocido';
+		}
+	};
 </script>
 
 <main>
@@ -47,65 +63,29 @@
 
 		<article>
 			<h2>Estadísticas de uso</h2>
-			<div>
-				<h3>Top de Sonidos</h3>
-				<ul>
-					{#if usersTop.length > 0}
-						{#each usersTop as cat, i}
-							<li class="top">
-								<p>Nombre audio</p>
-								<div class="topinfo">
-									<span>5 usos</span>
-								</div>
+			{#if data.statsBlocks != undefined && data.statsBlocks.length > 0}
+				{#each data.statsBlocks as statBlock}
+					<h3>Top de {getStatName(statBlock.type)}</h3>
+					<ul>
+						{#if statBlock.stats != undefined && statBlock.stats.length > 0}
+							{#each statBlock.stats as stat}
+								<li class="top">
+									<p>{stat.description}</p>
+									<div class="topinfo">
+										<span>{stat.quantity} usos</span>
+									</div>
+								</li>
+							{/each}
+						{:else}
+							<li>
+								<p>No hay información disponible</p>
 							</li>
-						{/each}
-					{:else}
-						<li>
-							<p>No hay información disponible</p>
-						</li>
-					{/if}
-				</ul>
-			</div>
-
-			<div>
-				<h3>Top de Comandos</h3>
-				<ul>
-					{#if usersTop.length > 0}
-						{#each usersTop as cat, i}
-							<li class="top">
-								<p>Nombre comando</p>
-								<div class="topinfo">
-									<span>6 usos</span>
-								</div>
-							</li>
-						{/each}
-					{:else}
-						<li>
-							<p>No hay información disponible</p>
-						</li>
-					{/if}
-				</ul>
-			</div>
-
-			<div>
-				<h3>Top de Sonidos</h3>
-				<ul>
-					{#if usersTop.length > 0}
-						{#each usersTop as cat, i}
-							<li class="top">
-								<p>Nombre usuario</p>
-								<div class="topinfo">
-									<span>5 usos</span>
-								</div>
-							</li>
-						{/each}
-					{:else}
-						<li>
-							<p>No hay información disponible</p>
-						</li>
-					{/if}
-				</ul>
-			</div>
+						{/if}
+					</ul>
+				{/each}
+			{:else}
+				<p>Sin estadísticas disponibles</p>
+			{/if}
 		</article>
 	</section>
 </main>
@@ -140,24 +120,24 @@
 				flex-flow: column;
 
 				#sounds-header {
-						display: flex;
-						flex-flow: row wrap;
-						justify-content: space-between;
-						justify-items: center;
-						margin: 1.25em 0;
+					display: flex;
+					flex-flow: row wrap;
+					justify-content: space-between;
+					justify-items: center;
+					margin: 1.25em 0;
 
-						h2, button {
-							margin: 0;
-							align-self: center;
-						}
-
-
-						button {
-							width: fit-content;
-							height: fit-content;
-							padding: .85em 1em;
-						}
+					h2,
+					button {
+						margin: 0;
+						align-self: center;
 					}
+
+					button {
+						width: fit-content;
+						height: fit-content;
+						padding: 0.85em 1em;
+					}
+				}
 
 				.sound {
 					&:last-child {
@@ -226,6 +206,7 @@
 
 			ul {
 				padding: 0;
+				margin: 0;
 
 				li {
 					list-style: none;

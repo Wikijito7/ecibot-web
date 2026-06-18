@@ -23,7 +23,7 @@
 			return;
 		}
 
-		if (!username.trim()) {
+		if (!password.trim()) {
 			error = 'La constraseña no puede estar vacío.';
 			return;
 		}

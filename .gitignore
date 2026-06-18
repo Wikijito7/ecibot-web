@@ -32,3 +32,4 @@ _actual*.*
 _output
 /types
 .eslintcache
+.memory/
